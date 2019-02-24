@@ -1,0 +1,13 @@
+{
+  "name": "shop-db",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:aneurysmjs/shop-db.git",
+  "author": "jero <jeroflat@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "5.13.0",
+    "eslint-config-airbnb-base": "13.1.0",
+    "mongoose": "5.4.14"
+  }
+}
