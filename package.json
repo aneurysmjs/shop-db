@@ -1,0 +1,31 @@
+{
+  "name": "shop-db",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:aneurysmjs/shop-db.git",
+  "author": "jero <jeroflat@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "commit": "git-cz",
+    "start": "node index.js"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "devDependencies": {
+    "commitizen": "3.0.7",
+    "cz-conventional-changelog": "2.1.0",
+    "eslint": "5.13.0",
+    "eslint-config-airbnb-base": "13.1.0",
+    "nodemon": "1.18.10"
+  },
+  "dependencies": {
+    "body-parser": "1.18.3",
+    "colors": "1.3.3",
+    "express": "4.16.4",
+    "mongoose": "5.4.19",
+    "morgan": "1.9.1"
+  }
+}
