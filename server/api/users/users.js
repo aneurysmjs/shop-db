@@ -11,7 +11,9 @@ const User = require('./userModel');
 usersRouter.route('/')
    .get(async (req, res, next) => {
       try {
-        const users = await User.find({}).populate();
+        const users = await User.find({})
+          .populate('shop')
+          .exec();
         res.json(users);
       } catch (error) {
         next(error);
@@ -35,7 +37,9 @@ usersRouter.route('/:id')
     try {
       const user = await User.findOne({
         _id: id,
-      });
+      })
+      .populate('shop')
+      .exec();
       res.json(user);
     } catch (error) {
       next(error);
