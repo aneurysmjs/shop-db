@@ -8,5 +8,6 @@ const router = require('express').Router();
  */
 
 router.use('/users', require('./users/users'));
+router.use('/shops', require('./shops/shops'));
 
 module.exports = router;
