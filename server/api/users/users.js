@@ -9,69 +9,63 @@ const User = require('./userModel');
  * we can define that common url and only apply the HTTP verbs that correspond.
  */
 usersRouter.route('/')
-   .get((req, res, next) => {
-      User.find({})
-        .then((users) =>{
-          res.json(users);
-        })
-        .catch((err) =>{
-          next(err);
-        });
+   .get(async (req, res, next) => {
+      try {
+        const users = await User.find({}).populate();
+        res.json(users);
+      } catch (error) {
+        next(error);
+      }
    })
-   .post((req, res) => {
+   .post(async (req, res, next) => {
       const user = req.body;
-      User.create({
-        ...user,
-      })
-        .then((createdUser) =>{
-          res.json(createdUser);
-        })
-        .catch((err) =>{
-          next(err);
+      try {
+        const createdUser = await User.create({
+          ...user,
         });
+        res.json(createdUser);
+      } catch (error) {
+        next(error);
+      }
    });
 
 usersRouter.route('/:id')
-   .get((req, res, next) => {
-      
-      User.findOne({
-        _id: req.params.id,
-      })
-      .then((user) => {
-        res.json(user);
-      })
-      .catch((err) => {
-        next(err);
+  .get(async (req, res, next) => {
+    const { id } = req.params;
+    try {
+      const user = await User.findOne({
+        _id: id,
       });
-
-   })
-   .put((req, res) => {
-      const { id } = req.params;
-      const user = req.body;
-      User.findByIdAndUpdate(id, {
+      res.json(user);
+    } catch (error) {
+      next(error);
+    }
+  })
+  .put(async (req, res, next) => {
+    const { id } = req.params;
+    const user = req.body;
+    try {
+      const updatedUser = await User
+        .findByIdAndUpdate(id, {
           ...user,
         },
-        { new: true }
-      )
-        .then(updatedUser => {
-          res.json(updatedUser);
-        })
-        .catch((err) => {
-          next(err);
-        });
-   })
-   .delete((req, res) => {
-      const { id } = req.params;
-      User.findByIdAndDelete({
+        { new: true },
+      );
+      res.json(updatedUser);
+    } catch (error) {
+      next(error);
+    }
+  })
+  .delete(async (req, res, next) => {
+    const { id } = req.params;
+    try {
+      const user = await User.findByIdAndDelete({
         _id: id,
-      })
-      .then((user) => {
-        res.json(user);
-      })
-      .catch((err) => {
-        next(err);
       });
-
-   });
+      res.json(user);
+    } catch (error) {
+      next(error);
+    }
+  });
 
 module.exports = usersRouter;
