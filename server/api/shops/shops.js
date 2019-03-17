@@ -1,3 +1,4 @@
+const has = require('lodash.has');
 const Router = require('express');
 const shopsRouter = Router();
 
@@ -8,6 +9,23 @@ shopsRouter.route('/')
       Shop.find({})
         .then((shops) =>{
           res.json(shops);
+        })
+        .catch((err) =>{
+          next(err);
+        });
+   })
+   .delete((req, res, next) => {
+      if (!has(req.body, 'shops')) {
+        next('shops property doesn\'t exist');
+      }
+      const { shops } = req.body;
+      Shop.deleteMany({
+        _id: {
+          '$in': shops,
+        },
+      })
+        .then((deletedShops) =>{
+          res.json(deletedShops);
         })
         .catch((err) =>{
           next(err);
