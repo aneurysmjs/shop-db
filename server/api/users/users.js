@@ -1,6 +1,7 @@
 const Router = require('express');
 const usersRouter = Router();
 
+const wrapAsync = require('../../utils/wrapAsync');
 const User = require('./userModel');
 
 /**
@@ -41,7 +42,7 @@ usersRouter.route('/:id')
       .populate('shop')
       .exec();
       res.json(user);
-    } catch (error) {
+    } catch (error) {      
       next(error);
     }
   })
