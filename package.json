@@ -1,14 +1,15 @@
 {
   "name": "shop-db",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/main.js",
   "repository": "git@github.com:aneurysmjs/shop-db.git",
   "author": "jero <jeroflat@gmail.com>",
   "license": "MIT",
   "scripts": {
     "commit": "git-cz",
     "nodemon": "node ./node_module/.bin/nodemon",
-    "start": "nodemon index.js"
+    "start": "cross-env NODE_ENV=development node scripts/start.js",
+    "build": "cross-env NODE_ENV=production node scripts/build.js"
   },
   "config": {
     "commitizen": {
@@ -16,11 +17,19 @@
     }
   },
   "devDependencies": {
+    "chalk": "2.4.2",
     "commitizen": "3.1.1",
+    "cross-env": "5.2.0",
     "cz-conventional-changelog": "2.1.0",
     "eslint": "5.16.0",
     "eslint-config-airbnb-base": "13.1.0",
-    "nodemon": "1.19.1"
+    "nodemon": "1.19.1",
+    "rimraf": "2.6.3",
+    "webpack": "4.33.0",
+    "webpack-dev-middleware": "3.7.0",
+    "webpack-merge": "4.2.1",
+    "webpack-node-externals": "1.7.2",
+    "write-file-webpack-plugin": "4.5.0"
   },
   "dependencies": {
     "body-parser": "1.19.0",
