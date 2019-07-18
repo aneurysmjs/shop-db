@@ -1,7 +1,6 @@
-const { port, db } = require('./server/config/config');
-const app = require('./server/server');
-// const logger = require('./server/utils/logger');
 const mongoose = require('mongoose');
+const { port, db } = require('./config/config');
+const app = require('./server');
 
 const connect = () => {
   return mongoose.connect(db.url);
@@ -13,7 +12,7 @@ const connect = () => {
     app.listen(port, () => {
       console.log(`REST API on http://localhost:${port}/api`);
     });
-  } catch (e) {
-    console.error('e===', e);
+  } catch (err) {
+    console.error('==== err ===', err);
   }
 })();
