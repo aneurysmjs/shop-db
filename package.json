@@ -18,14 +18,14 @@
   },
   "devDependencies": {
     "chalk": "2.4.2",
-    "commitizen": "3.1.1",
+    "commitizen": "3.1.2",
     "cross-env": "5.2.0",
     "cz-conventional-changelog": "2.1.0",
-    "eslint": "5.16.0",
-    "eslint-config-airbnb-base": "13.1.0",
+    "eslint": "6.0.1",
+    "eslint-config-airbnb-base": "13.2.0",
     "nodemon": "1.19.1",
     "rimraf": "2.6.3",
-    "webpack": "4.33.0",
+    "webpack": "4.36.1",
     "webpack-dev-middleware": "3.7.0",
     "webpack-merge": "4.2.1",
     "webpack-node-externals": "1.7.2",
@@ -37,7 +37,7 @@
     "cors": "2.8.5",
     "express": "4.17.1",
     "lodash.has": "4.5.2",
-    "mongoose": "5.5.14",
+    "mongoose": "5.6.5",
     "morgan": "1.9.1"
   }
 }

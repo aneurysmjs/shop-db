@@ -22,7 +22,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "2e2747f6e57f68f91625";
+/******/ 	var hotCurrentHash = "12c657d7dbcaa5b46b46";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -894,7 +894,7 @@ eval("module.exports = {\n  // disbable logging for testing\n  logging: false\n}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const mongoose = __webpack_require__(/*! mongoose */ \"mongoose\");\nconst { port, db } = __webpack_require__(/*! ./config/config */ \"./src/config/config.js\");\nconst app = __webpack_require__(/*! ./server */ \"./src/server.js\");\n\nconst connect = () => {\n  return mongoose.connect(db.url);\n};\n\n(async () => {\n  try {\n    await connect();\n    app.listen(port, () => {\n      console.log(`REST API on http://localhost:${port}/api`);\n    });\n  } catch (e) {\n    console.error('e===', e);\n  }\n})();\n\n//# sourceURL=webpack:///./src/main.js?");
+eval("const mongoose = __webpack_require__(/*! mongoose */ \"mongoose\");\nconst { port, db } = __webpack_require__(/*! ./config/config */ \"./src/config/config.js\");\nconst app = __webpack_require__(/*! ./server */ \"./src/server.js\");\n\nconst connect = () => {\n  return mongoose.connect(db.url);\n};\n\n(async () => {\n  try {\n    await connect();\n    app.listen(port, () => {\n      console.log(`REST API on http://localhost:${port}/api`);\n    });\n  } catch (err) {\n    console.error('==== err ===', err);\n  }\n})();\n\n//# sourceURL=webpack:///./src/main.js?");
 
 /***/ }),
 
