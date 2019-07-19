@@ -10,5 +10,6 @@ const router = require('express').Router();
 router.use('/users', require('./users/users'));
 router.use('/products', require('./products/products'));
 router.use('/shops', require('./shops/shops'));
+router.use('/warehouses', require('./warehouses/warehouses'));
 
 module.exports = router;

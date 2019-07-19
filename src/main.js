@@ -1,10 +1,12 @@
-const mongoose = require('mongoose');
-const { port, db } = require('./config/config');
-const app = require('./server');
+import mongoose from 'mongoose';
 
-const connect = () => {
-  return mongoose.connect(db.url);
-};
+import config from './config/config';
+
+const { port, db } = config;
+
+import app from './server';
+
+const connect = () => mongoose.connect(db.url);
 
 (async () => {
   try {
