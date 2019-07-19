@@ -13,4 +13,7 @@ config.env = process.env.NODE_ENV;
 
 const envConfig = require(`./${config.env}`);
 
-module.exports = Object.assign(config, envConfig);
+export default {
+  ...config,
+  ...envConfig
+};
