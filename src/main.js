@@ -1,4 +1,5 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose'
+;
 const { port, db } = require('./config/config');
 const app = require('./server');
 
