@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const WarehouseSchema = new mongoose.Schema({
   latitude: {
@@ -16,4 +16,4 @@ const WarehouseSchema = new mongoose.Schema({
   },
 }, { timestamps: true, });
 
-module.exports = mongoose.model('warehouse', WarehouseSchema);
+export default mongoose.model('warehouse', WarehouseSchema);

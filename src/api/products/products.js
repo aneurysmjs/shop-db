@@ -1,8 +1,9 @@
-const has = require('lodash.has');
-const Router = require('express');
-const productsRouter = Router();
+import has from 'lodash.has';
+import { Router } from 'express';
 
-const Product = require('./productModel');
+import Product from './productModel';
+
+const productsRouter = Router();
 
 productsRouter.route('/')
    .get((req, res, next) => {
@@ -87,4 +88,4 @@ productsRouter.route('/:id')
 
    });
 
-module.exports = productsRouter;
+export default productsRouter;

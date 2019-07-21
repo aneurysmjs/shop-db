@@ -1,15 +1,15 @@
-const router = require('express').Router();
+import { Router } from 'express';
 
-/**
- * api router will mount other routers for all resources.
- * Each resource folder has a resourceRoutes.js file with
- * the router ready to go, require them and mount them to
- * their respective routes below
- */
+import users from './users/users';
+import products from './products/products';
+import shops from './shops/shops';
+import warehouses from './warehouses/warehouses';
 
-router.use('/users', require('./users/users'));
-router.use('/products', require('./products/products'));
-router.use('/shops', require('./shops/shops'));
-router.use('/warehouses', require('./warehouses/warehouses'));
+const router = Router();
 
-module.exports = router;
+router.use('/users', users);
+router.use('/products', products);
+router.use('/shops', shops);
+router.use('/warehouses', warehouses);
+
+export default router;
