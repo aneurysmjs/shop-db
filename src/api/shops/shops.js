@@ -1,8 +1,9 @@
-const has = require('lodash.has');
-const Router = require('express');
-const shopsRouter = Router();
+import has from 'lodash.has';
+import { Router } from 'express';
 
-const Shop = require('./shopModel');
+import Shop from './shopModel';
+
+const shopsRouter = Router();
 
 shopsRouter.route('/')
    .get((req, res, next) => {
@@ -31,7 +32,7 @@ shopsRouter.route('/')
           next(err);
         });
    })
-   .post((req, res) => {
+   .post((req, res, next) => {
       const shop = req.body;
       Shop.create({
         ...shop,
@@ -58,7 +59,7 @@ shopsRouter.route('/:id')
       });
 
    })
-   .put((req, res) => {
+   .put((req, res, next) => {
       const { id } = req.params;
       const shop = req.body;
       Shop.findByIdAndUpdate(id, {
@@ -73,7 +74,7 @@ shopsRouter.route('/:id')
           next(err);
         });
    })
-   .delete((req, res) => {
+   .delete((req, res, next) => {
       const { id } = req.params;
       Shop.findByIdAndDelete({
         _id: id,
@@ -87,4 +88,4 @@ shopsRouter.route('/:id')
 
    });
 
-module.exports = shopsRouter;
+export default shopsRouter;

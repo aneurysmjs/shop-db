@@ -1,9 +1,8 @@
-const Router = require('express');
+import { Router } from 'express';
+
+import Warehouse from './warehouseModel';
+
 const warehousesRouter = Router();
-
-const wrapAsync = require('../../utils/wrapAsync');
-const Warehouse = require('./warehouseModel');
-
 /**
  * we can refactore our routes using the '.route()' method,
  * so instead of having lots of places that shared the same url,
@@ -73,4 +72,4 @@ warehousesRouter.route('/:id')
     }
   });
 
-module.exports = warehousesRouter;
+export default warehousesRouter;

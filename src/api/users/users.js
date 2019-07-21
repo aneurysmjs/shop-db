@@ -1,9 +1,9 @@
-const Router = require('express');
+import { Router } from 'express';
+
+// import wrapAsync from '../../utils/wrapAsync';
+import User from './userModel';
+
 const usersRouter = Router();
-
-const wrapAsync = require('../../utils/wrapAsync');
-const User = require('./userModel');
-
 /**
  * we can refactore our routes using the '.route()' method,
  * so instead of having lots of places that shared the same url,
@@ -73,4 +73,4 @@ usersRouter.route('/:id')
     }
   });
 
-module.exports = usersRouter;
+export default usersRouter;
