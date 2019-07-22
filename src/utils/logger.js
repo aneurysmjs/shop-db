@@ -1,9 +1,10 @@
 // no let needed here, colors will attached colors
 // to String.prototype
-require('colors');
+import 'colors';
 
-let _ = require('lodash'),
-   config = require('../config/config');
+import _ from 'lodash';
+
+import config from '../config/config';
 
 // create a noop (no operation) function for when loggin is disabled
 let noop = () => {};
@@ -38,4 +39,4 @@ let logger = {
   }
 };
 
-module.exports = logger;
+export default logger;

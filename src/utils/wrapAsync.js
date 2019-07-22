@@ -6,4 +6,4 @@ function wrapAsync(fn) {
   };
 }
 
-module.exports = wrapAsync;
+export default wrapAsync;
