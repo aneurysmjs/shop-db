@@ -21,7 +21,7 @@
     "commitizen": "4.0.3",
     "cross-env": "5.2.0",
     "cz-conventional-changelog": "3.0.2",
-    "eslint": "6.2.1",
+    "eslint": "6.2.2",
     "eslint-config-airbnb-base": "14.0.0",
     "nodemon": "1.19.1",
     "rimraf": "3.0.0",
