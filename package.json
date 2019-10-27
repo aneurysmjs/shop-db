@@ -38,6 +38,7 @@
     "express": "4.17.1",
     "lodash.has": "4.5.2",
     "mongoose": "5.6.5",
-    "morgan": "1.9.1"
+    "morgan": "1.9.1",
+    "uselazy": "2.1.0"
   }
 }
