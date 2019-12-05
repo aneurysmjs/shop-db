@@ -21,7 +21,7 @@
     "commitizen": "4.0.3",
     "cross-env": "6.0.3",
     "cz-conventional-changelog": "3.0.2",
-    "eslint": "6.7.0",
+    "eslint": "6.7.2",
     "eslint-config-airbnb-base": "14.0.0",
     "nodemon": "2.0.1",
     "rimraf": "3.0.0",
@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "body-parser": "1.19.0",
-    "colors": "1.3.3",
+    "colors": "1.4.0",
     "cors": "2.8.5",
     "express": "4.17.1",
     "lodash.has": "4.5.2",
